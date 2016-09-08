@@ -10,7 +10,7 @@ void merge(int arr[], int startI, int endI){
 			swap(arr[i],arr[j]);
 			for(int l=j;l<endI && arr[l+1]<arr[l];l++){
 				swap(arr[l], arr[l+1]);
-				j=l;
+				//j=l;
 			}
 		}
 	}
