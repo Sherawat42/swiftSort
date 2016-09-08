@@ -5,12 +5,13 @@ using namespace std;
 void merge(int arr[], int startI, int endI){
 	int i = startI, j = 1+(startI+endI)/2;
 	int l=0;
+	int pil=j;//PIL is previous insertion location
 	for(;i<=(startI+endI)/2;i++){
 		if(arr[i] > arr[j]){
 			swap(arr[i],arr[j]);
-			for(int l=j;l<endI && arr[l+1]<arr[l];l++){
-				swap(arr[l], arr[l+1]);
-				//j=l;
+			for(;pil<endI && arr[pil+1]<arr[pil];pil++){
+				swap(arr[pil], arr[pil+1]);
+				pil++;//This is great bug this will give wrong results!!
 			}
 		}
 	}
