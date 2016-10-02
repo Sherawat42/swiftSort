@@ -4,16 +4,17 @@ using namespace std;
 
 void merge(int arr[], int startI, int endI){
 	int i = startI, j = 1+(startI+endI)/2;
-	int l=0;
+	int newArray[(startI-endI)/2+1];
+	int newArrayIndex = 0;
 	for(;i<=(startI+endI)/2;i++){
 		if(arr[i] > arr[j]){
+			newArray[newArrayIndex++] = arr[i];
 			swap(arr[i],arr[j]);
-			for(int l=j;l<endI && arr[l+1]<arr[l];l++){
-				swap(arr[l], arr[l+1]);
-				//j=l;
-			}
+			arr[j++] = INT_MIN;
 		}
 	}
+	//Write the code here to make the newArray and the passed array completely sorted it is presently sorted till half the index
+	//try this recursively :> place the newArray(which is also sorted) numbers at the end of the current array and call a function that is of similar kind to this one 
 }
 
 void sort(int arr[],int startI, int endI){
